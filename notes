@@ -1,0 +1,19 @@
+Synchrony call
+    if (req.url = '/'){
+            page = fs.readFileSync('index.html');
+        }
+
+Asynchronous call
+    fs.readFile('index.html', function(err, page){
+            if (err) {
+                console.error(err);
+                res.statusCode = 500;
+                res.end('Server error occurred!');
+                return;
+            }
+            res.end(page);
+        });
+
+What, where is using.
+
+LibUV - library cross platform function realization
