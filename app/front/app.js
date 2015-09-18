@@ -1,1 +1,3 @@
-var app = angular.module('app', ['router']);
+(function(){
+    angular.module('app', []);
+})();

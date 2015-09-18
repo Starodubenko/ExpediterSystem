@@ -1,6 +1,5 @@
-var router = angular.module('appRouter', ['ui.router']);
-
-router.config(function($stateProvider, $RouterProvider, $locationProvider) {
+angular.module('appRouter', ['ui.router'])
+    .config(function($stateProvider, $RouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
 
@@ -13,7 +12,7 @@ router.config(function($stateProvider, $RouterProvider, $locationProvider) {
     $stateProvider
         .state('home', {
             url: '/home',
-            templateUrl: 'index.html'
+            templateUrl: 'app/front/template/home.html'
         })
         .state('about', {
 
