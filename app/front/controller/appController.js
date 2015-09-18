@@ -1,21 +1,11 @@
 (function () {
-    angular.module('app').controller('AppController', ['$scope', appController]);
+    angular.module('app').controller('AppController', ['$scope', '$http', appController]);
 
-    function appController($scope) {
+    function appController($scope, $http) {
 
-        $scope.humans = [
-            {name: 'Vasya', lastName: 'Pupkin'},
-            {name: 'Masha', lastName: 'Lazha'},
-            {name: 'Lala', lastName: 'Shala'}
-        ];
-
-        //function getHumans(){
-        //    $scope.humans = [
-        //        {name: 'Vasya', lastName: 'Pupkin'},
-        //        {name: 'Masha', lastName: 'Lazha'},
-        //        {name: 'Lala', lastName: 'Shala'}
-        //    ]
-        //}
+        $http.get('/humans').success(function(response){
+            $scope.humans = response;
+        });
     }
 
 })();
