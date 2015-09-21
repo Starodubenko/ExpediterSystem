@@ -1,29 +1,31 @@
-var port = 8181;
+var port = 8282;
 //var serverUrl = "127.0.0.1";
 
 var express = require('express');
-var oracledb = require('oracledb');
+var mongojs = require('mongojs');
 var app = express();
+//var db = mongojs('users', ['users']);
+var db = mongojs('test', ['users']);
 
 app.use(express.static(__dirname + '/front'));
 app.use(express.static(__dirname + '/node_modules'));
 
-oracledb.getConnections(
+app.get('/users', function (req, resp) {
 
-)
+    db.users.find(function(err, docs){
+       resp.json(docs)
+    });
 
-app.get('/humans', function (req, resp) {
+    //var humans = [
+    //    {name: 'Vasya', lastName: 'Pupkin'},
+    //    {name: 'Masha', lastName: 'Lazha'},
+    //    {name: 'Lala', lastName: 'Shala'}
+    //];
 
-    var humans = [
-        {name: 'Vasya', lastName: 'Pupkin'},
-        {name: 'Masha', lastName: 'Lazha'},
-        {name: 'Lala', lastName: 'Shala'}
-    ];
-
-    resp.json(humans);
+    //resp.json(humans);
 });
 
-app.post('/humans', function(req,resp){
+app.post('/users', function(req,resp){
 
 });
 
