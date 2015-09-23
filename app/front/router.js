@@ -1,21 +1,20 @@
-angular.module('appRouter', ['ui.router'])
-    .config(function($stateProvider, $RouterProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+(function () {
+    angular.module('appRouter', ['ui.router'])
+        .config(function ($stateProvider, $urlRouterProvider) {
 
+            $stateProvider
+                .state('home', {
+                    url: '/',
+                    templateUrl: '/index.html'
+                })
+                //.state('homee', {
+                //    url: '/home',
+                //    templateUrl: 'app/front/template/home.html'
+                //})
+                .state('about', {});
 
-    //$RouterProvider.when('/',
-    //    {
-    //        templateUrl: 'index.html'
-    //
-    //    });
-
-    $stateProvider
-        .state('home', {
-            url: '/home',
-            templateUrl: 'app/front/template/home.html'
-        })
-        .state('about', {
+            $urlRouterProvider.otherwise('/');
 
         });
 
-});
+})();
