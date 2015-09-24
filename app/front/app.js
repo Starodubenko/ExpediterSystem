@@ -4,6 +4,7 @@
         'app.directives.navig',
         'app.directives.footer',
         'app.directives.home',
-        'app.directives.work'
+        'app.directives.work',
+        'app.directives.mainframe'
     ]);
 })();

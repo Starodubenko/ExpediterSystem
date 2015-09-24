@@ -8,8 +8,8 @@ var app = express();
 var db = mongojs('test', ['users']);
 
 app.use(express.static(__dirname + '/front'));
-app.use(express.static(__dirname + '/node_modules'));
-app.use(express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + '/../node_modules'));
+app.use(express.static(__dirname + '/../bower_components'));
 
 app.get('/users', function (req, resp) {
 
