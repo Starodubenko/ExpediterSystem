@@ -1,7 +1,7 @@
 {
   "name": "ExpediterSystem",
   "version": "0.0.1",
-  "dependencies": {
+  "devDependencies": {
     "angular": "1.4.6",
     "angular-ui-router": "0.2.15",
     "bootstrap": "3.3.5",
