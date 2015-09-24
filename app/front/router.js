@@ -5,12 +5,20 @@
             $stateProvider
                 .state('home', {
                     url: '/',
-                    templateUrl: '/index.html'
+                    template: '<home></home>'
                 })
-                //.state('homee', {
-                //    url: '/home',
-                //    templateUrl: 'app/front/template/home.html'
-                //})
+                .state('login', {
+                    url: '/login',
+                    templateUrl: 'app/front/template/home.html'
+                })
+                .state('work', {
+                    url: '/work',
+                    templateUrl: 'app/front/template/home.html'
+                })
+                .state('admin', {
+                    url: '/admin',
+                    templateUrl: 'app/front/template/home.html'
+                })
                 .state('about', {});
 
             $urlRouterProvider.otherwise('/');

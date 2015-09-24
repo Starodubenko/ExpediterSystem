@@ -7,26 +7,19 @@
 </head>
 <body>
 
-<base href="/">
-
-<div class="panel panel-default" ng-controller="AppController">
-    <div ng-repeat="user in users">
-        Hello {{user.name + " " + user.surname}}
-    </div>
-    <!--Name: <input type="text" ng-model="name"/>-->
-    <a href="/home">Home page</a>
-</div>
-
-<div class=""></div>
-
+<navig data="123"></navig>
 <div ui-view></div>
+<footer></footer>
 
 <script src="angular/angular.min.js"></script>
 <script src="angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="jquery/dist/jquery.min.js"></script>
 <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="app.js"></script>
-<script src="controller/appController.js"></script>
 <script src="router.js"></script>
+<script src="controller/appController.js"></script>
+<script src="directives/navig/navig.js"></script>
+<script src="directives/footer/footer.js"></script>
+<script src="directives/home/home.js"></script>
 </body>
 </html>
