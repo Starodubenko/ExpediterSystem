@@ -13,7 +13,7 @@
                 })
                 .state('work', {
                     url: '/work',
-                    templateUrl: 'app/front/template/home.html'
+                    template: '<work></work>'
                 })
                 .state('admin', {
                     url: '/admin',

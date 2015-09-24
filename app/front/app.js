@@ -3,6 +3,7 @@
         'appRouter',
         'app.directives.navig',
         'app.directives.footer',
-        'app.directives.home'
+        'app.directives.home',
+        'app.directives.work'
     ]);
 })();
