@@ -9,18 +9,10 @@
 <body>
 
 <navig data="123"></navig>
-<div ui-view></div>
+<main-frame>
+    <div ui-view></div>
+</main-frame>
 <footer></footer>
-
-<!--<grid-screen resource="/data.json">-->
-<grid-screen resource="/front/directives/customTable/data.json">
-    <grid-columns>
-        <grid-column title="Product" field="product"></grid-column>
-        <grid-column title="Description" field="description"></grid-column>
-        <grid-column title="Cost" field="cost"></grid-column>
-    </grid-columns>
-    <grid with-inline-editor></grid>
-</grid-screen>
 
 <script src="jquery/dist/jquery.min.js"></script>
 <script src="angular/angular.min.js"></script>

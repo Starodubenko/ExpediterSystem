@@ -11,9 +11,21 @@
                     url: '/login',
                     templateUrl: 'app/front/template/home.html'
                 })
-                .state('work', {
-                    url: '/work',
-                    template: '<work></work>'
+                .state('orders', {
+                    url: '/orders',
+                    template: '<orders></orders>'
+                })
+                .state('orders.morning', {
+                    url: '/morning',
+                    template: '<orders></orders>'
+                })
+                .state('orders.lunch', {
+                    url: '/lunch',
+                    template: '<orders></orders>'
+                })
+                .state('orders.evening', {
+                    url: '/evening',
+                    template: '<orders></orders>'
                 })
                 .state('admin', {
                     url: '/admin',

@@ -1,12 +1,12 @@
 (function () {
     angular.module('app.directives.work', [])
-        .directive('work', function () {
+        .directive('orders', function () {
             return {
                 restrict: 'E',
                 scope: {
                     data: '='
                 },
-                templateUrl: 'directives/work/work.html',
+                templateUrl: 'directives/orders/orders.html',
                 controller: function ($scope) {
                     console.log($scope.data);
                 }
