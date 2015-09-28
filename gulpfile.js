@@ -3,23 +3,26 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var minifyCss = require('gulp-minify-css');
 
+var tempDirectory = "app/temp";
+var srcDirectory = "app/front/**/**/";
+
 gulp.task('scripts', function () {
-    gulp.src('app/front/**/**/*js')
+    gulp.src(srcDirectory + '*js')
         .pipe(concat('all.min.js'))
         //.pipe(uglify())
-        .pipe(gulp.dest('app/front/temp'))
+        .pipe(gulp.dest(tempDirectory))
 });
 
 gulp.task('css', function(){
-    gulp.src('app/front/**/**/*css')
+    gulp.src(srcDirectory + '*css')
         .pipe(concat('all.min.css'))
         .pipe(minifyCss())
-        .pipe(gulp.dest('app/front/temp'))
+        .pipe(gulp.dest(tempDirectory))
 });
 
 gulp.task('watch', function(){
-    gulp.watch('app/front/**/**/*js', ['scripts']);
-    gulp.watch('app/front/**/**/*css', ['css']);
+    gulp.watch(srcDirectory + '*js', ['scripts']);
+    gulp.watch(srcDirectory + '*css', ['css']);
 });
 
 gulp.task('default', ['scripts', 'css']);

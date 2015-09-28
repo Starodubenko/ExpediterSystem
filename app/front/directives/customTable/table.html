@@ -1,0 +1,14 @@
+<table class="table table-striped custom-table">
+    <thead>
+    <tr>
+        <th ng-repeat="col in cols">{{col.title}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="row in rows">
+        <td ng-repeat="col in cols">
+            {{row[col.field]}}
+        </td>
+    </tr>
+    </tbody>
+</table>

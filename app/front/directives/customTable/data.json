@@ -1,0 +1,18 @@
+{
+  "data": [
+    {
+      "product":"Widget",
+      "description": "Amazing widgets of outstanding durability",
+      "cost" : 20
+    },
+    {
+      "product":"Paints",
+      "description": "Slacks for an 80s dinner party",
+      "cost" : 40
+    },{
+      "product":"Cow",
+      "description": "Brilliand bovine",
+      "cost" : 60
+    }
+  ]
+}
