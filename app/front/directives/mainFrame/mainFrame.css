@@ -1,7 +1,35 @@
 .main-frame{
-    width: 1200px;
+    width: 100%;
     min-height: 400px;
     background-color: #cef489;
     margin: auto;
     padding: 1px;
+    position: relative;
+    float: left;
+}
+
+.toolbar{
+    height: 98.9%;
+    width: 9.5%;
+    background-color: #ccc;
+    position: absolute;
+    margin: 0.1% 0.25%;
+}
+
+.orders-frame{
+    height: 98.9%;
+    width: 69.5%;
+    background-color: #ccc;
+    position: absolute;
+    left: 10%;
+    margin: 0.1% 0.25%;
+}
+
+.chat-frame{
+    width: 19.5%;
+    height: 98.9%;
+    background-color: #ccc;
+    position: absolute;
+    left: 80%;
+    margin: 0.1% 0.25%;
 }
