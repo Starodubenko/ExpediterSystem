@@ -1,76 +1,35 @@
-@media all and (max-width: 900px) {
-    .navig-mian{
-        width: 100%;
-        height: 120px;
-        position: relative;
-        float: left;
-        background-color: #09295A;
-    }
-}
-
-@media all and (min-width: 900px) {
-    .navig-mian{
-        width: 100%;
-        height: 10%;
-        position: relative;
-        float: left;
-        background-color: #09295A;
-    }
-}
-
-
-@media all and (max-width: 900px){
-    .navig-button{
-        position: relative;
-        height: 33px;
-        width: 100%;
-        background-color: #cccccc;
-        float: left;
-    }
-}
-
-@media all and (min-width: 900px) {
-    .navig-button {
-        position: relative;
-        height: 100%;
-        width: 33.333%;
-        background-color: #cccccc;
-        float: left;
-    }
-}
-
-
-.navig-label-small{
-    display: inline-block;
+.navig-mian {
     position: relative;
-    width: 100%;
-    font-size: 12px;
+    background-color: #09295A;
+    min-height: 80px;
+    height: 1px;
 }
 
-.navig-label-small:before {
-    content: "";
-    display: block;
-    padding-top: 5%;
+.navig-button-container {
+    text-align: center;
+    background-color: #00b3ee;
+    height: 100%;
+    margin-left: 80px;
+    display: none;
 }
 
-.navig-label{
+.navig-label {
+    float: left;
+    margin: 5px;
+    min-width: 70px;
+    min-height: 70px;
+    background-color: black;
+}
+
+.navig-button {
     display: inline-block;
-    position: relative;
-    width: 5%;
-    font-size: 12px;
+    height: 100%;
+    width: 49%;
+    background-color: #cccccc;
 }
 
-.navig-label:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
-
-.navig-label-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: black;
+@media (max-width: 992px) {
+    .navig-button-container{
+        display: block;
+    }
 }
