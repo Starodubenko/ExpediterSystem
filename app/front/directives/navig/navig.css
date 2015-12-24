@@ -3,6 +3,7 @@
     background-color: #09295A;
     min-height: 80px;
     height: 1px;
+    text-align: center;
 }
 
 .navig-button-container {
@@ -14,11 +15,18 @@
 }
 
 .navig-label {
-    float: left;
     margin: 5px;
-    min-width: 70px;
     min-height: 70px;
-    background-color: black;
+    background-color: #000;
+    display: inline-block;
+    height: 93%;
+}
+
+#label-full-name{
+    display: block;
+}
+#label-short-name{
+    display: none;
 }
 
 .navig-button {
@@ -26,10 +34,49 @@
     height: 100%;
     width: 49%;
     background-color: #cccccc;
+    text-align: center;
+}
+
+.navig-button > a, .navig-label > a{
+    display: block;
+    font-size: 36px;
+    height: 100%;
+    padding-top: 10px;
 }
 
 @media (max-width: 992px) {
     .navig-button-container{
+        display: block;
+    }
+    .navig-label{
+        float: left;
+        min-width: 70px;
+    }
+    #label-full-name{
+        display: none;
+    }
+    #label-short-name{
+        display: block;
+    }
+}
+
+@media (max-device-width: 992px) {
+    .navig-button-container{
+        display: block;
+        margin-left: 150px;
+    }
+    .navig-label{
+        min-width: 140px;
+        min-height: 140px;
+        float: left;
+    }
+    .navig-mian {
+        min-height: 150px;
+    }
+    #label-full-name{
+        display: none;
+    }
+    #label-short-name{
         display: block;
     }
 }
