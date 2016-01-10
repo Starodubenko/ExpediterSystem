@@ -1,0 +1,21 @@
+.order-type-container{
+    text-align: center;
+}
+
+.order-type-button{
+    display: inline-block;
+    width: 32%;
+    height: 50px;
+    background-color: #ea5867;
+}
+
+.order-type-button > a {
+    display: block;
+    height: 100%;
+}
+
+@media (max-device-width: 992px) {
+    .order-type-button{
+        height: 100px;
+    }
+}

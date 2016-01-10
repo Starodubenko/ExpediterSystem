@@ -1,0 +1,55 @@
+.chat-area{
+    padding: 5%;
+}
+
+.messages{
+    background-color: #6d7bbb;
+}
+
+.message{
+    margin-bottom: 5px;
+    max-width: 80%;
+    min-width: 20%;
+    word-wrap: break-word;
+}
+
+.sender{
+    display: inline-block;
+}
+
+.from-me {
+    float: right;
+    background-color: #5cb85c;
+}
+
+.from-interlocutor {
+    float: left;
+    background-color: #d4d1ce;
+}
+
+.message-date{
+    display: inline-block;
+}
+
+.message-text{
+    margin-top: 5px;
+}
+
+.input-area{
+
+}
+
+.input-area > textarea{
+
+}
+
+.input-area > input{
+
+}
+
+
+@media (max-device-width: 992px) {
+    .order-type-button{
+        height: 100px;
+    }
+}

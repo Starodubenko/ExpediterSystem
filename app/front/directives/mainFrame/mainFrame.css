@@ -1,9 +1,9 @@
 .main-frame{
-    position: relative;
+    /*position: relative;*/
     background-color: #3c763d;
     height: 100vh;
     padding: 1px;
-    z-index: -1;
+    /*z-index: -1;*/
 }
 
 .toolbar{

@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "sender":"J.Smith",
+      "date": "08.01.2016",
+      "text" : "Hi!",
+      "me": true
+    },
+    {
+      "sender":"M.Johson",
+      "date": "08.01.2016",
+      "text" : "Hello!",
+      "me": false
+    },
+    {
+      "sender":"J.Smith",
+      "date": "08.01.2016",
+      "text" : "How are you?",
+      "me": true
+    },
+    {
+      "sender":"M.Johson",
+      "date": "08.01.2016",
+      "text" : "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
+      "me": false
+    },
+    {
+      "sender":"J.Smith",
+      "date": "08.01.2016",
+      "text" : "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
+      "me": true
+    }
+  ]
+}

@@ -1,17 +1,18 @@
-<div>
+<div class="order-type-container">
     <!--<a href="#/orders/morning">Morning</a>-->
     <!--<a href="#/orders/lunch">Lunch</a>-->
     <!--<a href="#/orders/evening">Evening</a> -->
-    <a ui-sref=".morning">Morning</a>
-    <a ui-sref=".lunch">Lunch</a>
-    <a ui-sref=".evening">Evening</a>
+    <div class="order-type-button"><a ui-sref=".morning">Morning</a></div>
+    <div class="order-type-button"><a ui-sref=".lunch">Lunch</a></div>
+    <div class="order-type-button"><a ui-sref=".evening">Evening</a></div>
 </div>
 
-<grid-screen resource="/front/directives/customTable/data.json">
+<grid-screen resource="/front/directives/customStuff/customTable/data.json">
     <grid-columns>
         <grid-column title="Product" field="product"></grid-column>
         <grid-column title="Description" field="description"></grid-column>
         <grid-column title="Cost" field="cost"></grid-column>
     </grid-columns>
-    <grid with-inline-editor></grid>
+    <!--<grid with-inline-editor></grid>-->
+    <grid></grid>
 </grid-screen>

@@ -27,6 +27,7 @@ angular.module('app').directive('gridColumns', function() {
             var gridScreenCtrl = controllers[0];
             var gridColumnsCtrl = controllers[1];
             gridScreenCtrl.setColumns(gridColumnsCtrl.getColumns());
+            //scope.$watch()
         },
         controller: function(){
             var cols = [];
@@ -54,7 +55,7 @@ angular.module('app').directive('gridColumn', function() {
 angular.module('app').directive('grid', function() {
     return{
         restrict: 'E',
-        templateUrl: "directives/customTable/table.html",
+        templateUrl: "directives/customStuff/customTable/table.html",
         replace: true,
         link: function(scope, element, attributes){
 
@@ -67,11 +68,11 @@ angular.module('app').directive('grid', function() {
         }
     };
 });
-angular.module('app').directive('withInlineEditor', function() {
-    return{
-        restrict: 'A',
-        link: function(scope, element, attributes){
-
-        }
-    };
-});
+//angular.module('app').directive('withInlineEditor', function() {
+//    return{
+//        restrict: 'A',
+//        link: function(scope, element, attributes){
+//
+//        }
+//    };
+//});

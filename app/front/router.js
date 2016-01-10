@@ -11,6 +11,10 @@
                     url: '/login',
                     templateUrl: 'app/front/template/home.html'
                 })
+                .state('chat', {
+                    url: '/chat',
+                    template: '<chat></chat>'
+                })
                 .state('orders', {
                     url: '/orders',
                     template: '<orders></orders>'
