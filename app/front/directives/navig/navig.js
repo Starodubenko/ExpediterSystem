@@ -9,23 +9,9 @@
                 templateUrl: 'directives/navig/navig.html',
                 link: function($scope, element, attrs) {
                     var toolsContainer = $('.tools-container');
-                    var navigw = angular.element($window);
-                    //var navigW = navig.width();
 
-                    $scope.getWindowWidth = function(){
-                        return {
-                            'w': navigw.width()
-                        };
-                    };
-
-                    $scope.$watch($scope.getWindowWidth, function (newValue, oldValue) {
-                        if (newValue.w > 992){
-                            toolsContainer.css("display", "none");
-                        }
-                    }, true);
-
-                    navigw.bind('navig', function () {
-                        scope.$apply();
+                    angular.element($window).bind('resize', function(){
+                        console.log("Window was resized!!!")
                     });
                 },
                 controller: function ($scope) {
