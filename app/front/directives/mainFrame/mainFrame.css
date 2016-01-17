@@ -1,9 +1,8 @@
 .main-frame{
-    /*position: relative;*/
     background-color: #3c763d;
     height: 100vh;
     padding: 1px;
-    /*z-index: -1;*/
+    min-height: 400px;
 }
 
 .toolbar{
@@ -12,12 +11,22 @@
     background-color: #6d7bbb;
     margin: 5px;
     float: left;
+    overflow-x: hidden;
 }
+
+.custom-scrollbar::-webkit-scrollbar-thumb{
+    background-color: #e5dce9;
+}
+.custom-scrollbar::-webkit-scrollbar{
+    width: 3px;
+}
+
 .orders-frame{
     height: 98%;
     margin: 5px 350px 5px 80px;
     background-color: #ccc;
     min-width: 543px;
+    overflow-x: hidden;
 }
 .chat-frame{
     height: 98%;
@@ -34,7 +43,13 @@
     }
 
     .toolbar{
-        display: none;
+        /*display: none;*/
+        position: absolute;
+        left: -90px;
+        width: 80px;
+        z-index: 1;
+
+        transition: left 0.2s ease-out 0.2s;
     }
 
     .orders-frame{

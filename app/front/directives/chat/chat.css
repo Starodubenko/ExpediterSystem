@@ -1,13 +1,28 @@
 .chat-area{
     padding: 5%;
+    width: 100%;
+    height: 100%;
+    /*float: right;*/
+    position: relative;
 }
 
 .messages{
     background-color: #6d7bbb;
+    position: absolute;
+    width: 90%;
+    top: 10px;
+    bottom: 200px;
+    overflow-x: hidden;
 }
 
 .message{
+    position: relative;
     margin-bottom: 5px;
+}
+
+.message > .content{
+    display: inline-block;
+    text-align: left;
     max-width: 80%;
     min-width: 20%;
     word-wrap: break-word;
@@ -18,12 +33,14 @@
 }
 
 .from-me {
-    float: right;
+    text-align: right;
+}
+
+.from-me > .content{
     background-color: #5cb85c;
 }
 
-.from-interlocutor {
-    float: left;
+.from-interlocutor > .content{
     background-color: #d4d1ce;
 }
 
@@ -36,17 +53,26 @@
 }
 
 .input-area{
-
+    position: absolute;
+    width: 90%;
+    bottom: 80px;
 }
 
 .input-area > textarea{
-
+    width: 100%;
+    margin-top: 5px;
 }
 
 .input-area > input{
-
+    float: right;
 }
 
+.custom-scrollbar::-webkit-scrollbar-thumb{
+    background-color: #e5dce9;
+}
+.custom-scrollbar::-webkit-scrollbar{
+    width: 3px;
+}
 
 @media (max-device-width: 992px) {
     .order-type-button{

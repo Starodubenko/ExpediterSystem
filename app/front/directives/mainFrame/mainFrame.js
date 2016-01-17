@@ -12,8 +12,24 @@
                 link: function (scope, element) {
                     //scope.name = 'Jeff';
                 },
-                controller: function ($scope) {
-                    console.log($scope.data);
+                controller: function ($scope, $document) {
+                    //console.log($scope.data);
+
+                    $scope.selectInToolbar = function(){
+                        $('.toolbar').toggleClass("open-toolbar");
+                    };
+
+                    $document.on("click", function(event){
+                        if ($(event.target).attr('id') != "label-short-name" ||
+                            $(!event.target).parent().hasClass('tool')){
+                            $('.toolbar').removeClass("open-toolbar");
+                        }
+
+                    });
+
+                    //scope.justClic = function(){
+                    //
+                    //}
                 }
             }
         });
