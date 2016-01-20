@@ -1,15 +1,15 @@
 <div class="main-frame">
     <div class="toolbar custom-scrollbar">
-        <li class="tool"><a href="#" ng-click="selectInToolbar()">Tool_1</a></li>
-        <li class="tool"><a href="#" ng-click="selectInToolbar()">Tool_2</a></li>
-        <li class="tool"><a href="#" ng-click="selectInToolbar()">Tool_3</a></li>
-        <li class="tool"><a href="#" ng-click="selectInToolbar()">Tool_4</a></li>
-        <li class="tool"><a href="#" ng-click="selectInToolbar()">Tool_5</a></li>
-        <li class="tool"><a href="#" ng-click="selectInToolbar()">Tool_6</a></li>
-        <li class="tool"><a href="#" ng-click="selectInToolbar()">Tool_7</a></li>
-        <li class="tool"><a href="#" ng-click="selectInToolbar()">Tool_8</a></li>
+        <li class="tool" ng-class="{'Tool_1':'selected-tool'}[selectedTool]"><a href="#" ng-click="selectInToolbar('Tool_1')">Tool_1</a></li>
+        <li class="tool" ng-class="{'Tool_2':'selected-tool'}[selectedTool]"><a href="#" ng-click="selectInToolbar('Tool_2')">Tool_2</a></li>
+        <li class="tool" ng-class="{'Tool_3':'selected-tool'}[selectedTool]"><a href="#" ng-click="selectInToolbar('Tool_3')">Tool_3</a></li>
+        <li class="tool" ng-class="{'Tool_4':'selected-tool'}[selectedTool]"><a href="#" ng-click="selectInToolbar('Tool_4')">Tool_4</a></li>
+        <li class="tool" ng-class="{'Tool_5':'selected-tool'}[selectedTool]"><a href="#" ng-click="selectInToolbar('Tool_5')">Tool_5</a></li>
+        <li class="tool" ng-class="{'Tool_6':'selected-tool'}[selectedTool]"><a href="#" ng-click="selectInToolbar('Tool_6')">Tool_6</a></li>
+        <li class="tool" ng-class="{'Tool_7':'selected-tool'}[selectedTool]"><a href="#" ng-click="selectInToolbar('Tool_7')">Tool_7</a></li>
+        <li class="tool" ng-class="{'Tool_8':'selected-tool'}[selectedTool]"><a href="#" ng-click="selectInToolbar('Tool_8')">Tool_8</a></li>
     </div>
     <div class="chat-frame"><chat></chat></div>
-    <div class="orders-frame " ng-transclude></div>
+    <div class="dynamic-frame" ng-transclude></div>
     <!--custom-scrollbar-->
 </div>

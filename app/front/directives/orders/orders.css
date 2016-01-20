@@ -14,6 +14,10 @@
     height: 100%;
 }
 
+.selected-state{
+    background-color: #6d7bbb;
+}
+
 @media (max-device-width: 992px) {
     .order-type-button{
         height: 100px;

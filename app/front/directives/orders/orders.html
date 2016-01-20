@@ -2,9 +2,9 @@
     <!--<a href="#/orders/morning">Morning</a>-->
     <!--<a href="#/orders/lunch">Lunch</a>-->
     <!--<a href="#/orders/evening">Evening</a> -->
-    <div class="order-type-button"><a ui-sref=".morning">Morning</a></div>
-    <div class="order-type-button"><a ui-sref=".lunch">Lunch</a></div>
-    <div class="order-type-button"><a ui-sref=".evening">Evening</a></div>
+    <div class="order-type-button" ng-class="{'morning':'selected-state'}[currentState]"><a ui-sref=".morning" ng-click="switchCurrentState('morning')">Morning</a></div>
+    <div class="order-type-button" ng-class="{'lunch':'selected-state'}[currentState]"><a ui-sref=".lunch" ng-click="switchCurrentState('lunch')">Lunch</a></div>
+    <div class="order-type-button" ng-class="{'evening':'selected-state'}[currentState]"><a ui-sref=".evening" ng-click="switchCurrentState('evening')">Evening</a></div>
 </div>
 
 <input ng-model="findOverAllOrders" type="text"/>

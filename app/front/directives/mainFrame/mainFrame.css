@@ -21,7 +21,7 @@
     width: 3px;
 }
 
-.orders-frame{
+.dynamic-frame{
     height: 98%;
     margin: 5px 350px 5px 80px;
     background-color: #ccc;
@@ -36,6 +36,10 @@
     float: right;
 }
 
+.selected-tool{
+    background-color: #acac27;
+}
+
 
 @media (max-width: 992px) {
     .chat-frame{
@@ -43,7 +47,6 @@
     }
 
     .toolbar{
-        /*display: none;*/
         position: absolute;
         left: -90px;
         width: 80px;
@@ -52,7 +55,7 @@
         transition: left 0.2s ease-out 0.2s;
     }
 
-    .orders-frame{
+    .dynamic-frame{
         margin: 5px;
     }
 }

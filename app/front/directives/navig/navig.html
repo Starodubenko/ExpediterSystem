@@ -12,11 +12,11 @@
             </ul> 
         </div>
         <div class="navig-button-container">
-            <div  class="navig-button">
-                <a href="#/orders">Orders</a>
+            <div  class="navig-button" ng-class="{'orders': 'selected-tool'}[currentStateOnSmallScreen]">
+                <a href="#/orders" ng-click="switchCurrentState('orders')">Orders</a>
             </div>
-            <div  class="navig-button">
-                <a href="#/chat">Chat</a>
+            <div  class="navig-button" ng-class="{'chat': 'selected-tool'}[currentStateOnSmallScreen]">
+                <a href="#/chat" ng-click="switchCurrentState('chat')">Chat</a>
             </div>
         </div>
 </div>

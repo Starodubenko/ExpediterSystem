@@ -4,20 +4,23 @@
             return {
                 restrict: 'E',
                 transclude: true,
-                scope: {
-                    data: '='
-                },
                 templateUrl: 'directives/mainFrame/mainFrame.html',
 
                 link: function (scope, element) {
-                    //scope.name = 'Jeff';
+
                 },
                 controller: function ($scope, $document) {
-                    //console.log($scope.data);
+                    $scope.selectedTool = "";
 
-                    $scope.selectInToolbar = function(){
+                    $scope.selectInToolbar = function(toolName){
                         $('.toolbar').toggleClass("open-toolbar");
+                        $scope.selectedTool = toolName;
+                        $scope.$parent.$broadcast('selected-additional-tool');
                     };
+
+                    $scope.$on('selected-main-tool', function (event, data) {
+                        $scope.selectedTool = '';
+                    });
 
                     $document.on("click", function(event){
                         if ($(event.target).attr('id') != "label-short-name" ||
@@ -26,10 +29,6 @@
                         }
 
                     });
-
-                    //scope.justClic = function(){
-                    //
-                    //}
                 }
             }
         });
