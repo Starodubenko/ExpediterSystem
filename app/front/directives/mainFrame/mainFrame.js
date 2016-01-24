@@ -9,13 +9,13 @@
                 link: function (scope, element) {
 
                 },
-                controller: function ($scope, $document) {
+                controller: function ($scope, $rootScope, $document) {
                     $scope.selectedTool = "";
 
                     $scope.selectInToolbar = function(toolName){
                         $('.toolbar').toggleClass("open-toolbar");
                         $scope.selectedTool = toolName;
-                        $scope.$parent.$broadcast('selected-additional-tool');
+                        $rootScope.$broadcast('selected-additional-tool');
                     };
 
                     $scope.$on('selected-main-tool', function (event, data) {

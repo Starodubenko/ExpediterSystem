@@ -7,7 +7,7 @@
       "me": true
     },
     {
-      "sender":"M.Johson",
+      "sender":"M.Johnson",
       "date": "08.01.2016",
       "text" : "Hello!",
       "me": false
@@ -19,7 +19,7 @@
       "me": true
     },
     {
-      "sender":"M.Johson",
+      "sender":"M.Johnson",
       "date": "08.01.2016",
       "text" : "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
       "me": false

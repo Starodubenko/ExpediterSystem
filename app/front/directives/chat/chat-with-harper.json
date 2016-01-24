@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "sender":"J.Smith",
+      "date": "08.01.2016",
+      "text" : "Hi! What's app?",
+      "me": true
+    },
+    {
+      "sender":"M.Harper",
+      "date": "08.01.2016",
+      "text" : "Hey! Something happened ...",
+      "me": false
+    },
+    {
+      "sender":"J.Smith",
+      "date": "08.01.2016",
+      "text" : "What? Where are you?",
+      "me": true
+    },
+    {
+      "sender":"M.Harper",
+      "date": "08.01.2016",
+      "text" : "Let's get together?",
+      "me": false
+    },
+    {
+      "sender":"J.Smith",
+      "date": "08.01.2016",
+      "text" : "Ok.",
+      "me": true
+    }
+  ]
+}

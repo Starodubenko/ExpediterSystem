@@ -37,7 +37,7 @@
                 })
                 .state('about', {});
 
-            $urlRouterProvider.otherwise('/');
+            //$urlRouterProvider.otherwise('/');
 
         });
 

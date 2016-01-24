@@ -10,7 +10,7 @@
     background-color: #6d7bbb;
     position: absolute;
     width: 90%;
-    top: 10px;
+    top: 60px;
     bottom: 200px;
     overflow-x: hidden;
 }
@@ -74,8 +74,99 @@
     width: 3px;
 }
 
+.chat-header{
+    position: absolute;
+    width: 90%;
+    top: 10px;
+    height: 50px;
+    background-color: #21D8AE;
+}
+
+.interlocutor-image{
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    float: right;
+    background-color: azure;
+}
+
+.my-image{
+    float: left;
+}
+
+.interlocutor-name{
+    float: right;
+    margin-top: 5px;
+}
+
+.my-name{
+    float: left;
+}
+
+.conversation-sign{
+    height: 30px;
+    position: absolute;
+    left: 42%;
+    right: 45%;
+}
+
+.conversation-sign > img{
+    height: inherit;
+}
+
+.list-panel{
+    overflow-x: hidden;
+    position: absolute;
+    width: 90%;
+    top: 10px;
+    bottom: 100%;
+    background-color: #3cd826;
+
+    transition: bottom 0.5s ease-out 0.2s, top 0.5s;
+}
+
+.list-panel-open{
+    bottom: 80px;
+    top: 60px;
+}
+
+.contact{
+    display: block;
+    background-color: #1b6d85;
+    margin: 2px;
+    position: relative;
+    height: 60px;
+}
+
+.contact-image{
+    height: 100%;
+    width: 40px;
+    float: left;
+}
+
+.contact-image{
+    float: left;
+}
+
+.contact-image{
+    float: left;
+}
+
+
+
 @media (max-device-width: 992px) {
     .order-type-button{
         height: 100px;
+    }
+
+    .conversation-sign{
+        left: 45%;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .conversation-sign{
+        left: 45%;
     }
 }
