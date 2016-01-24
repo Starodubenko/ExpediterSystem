@@ -1,6 +1,7 @@
 (function () {
     angular.module('app', [
         'appRouter',
+        'ngResource',
         'app.directives.navig',
         'app.directives.footer',
         'app.directives.home',

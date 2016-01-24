@@ -1,7 +1,7 @@
 <div class="chat-area">
 
     <div class="messages custom-scrollbar">
-        <div class="message" ng-repeat="message in chatHistory"
+        <div class="message" ng-repeat="message in chatHistory.data"
              ng-class="{true: 'from-me', false: 'from-interlocutor'}[message.me]">
             <div class="content">
                 <div class="sender">{{message.sender}}</div>
@@ -11,8 +11,8 @@
         </div>
     </div>
     <div class="input-area">
-        <textarea name="" id="" rows="4"></textarea>
-        <input type="button" value="Send">
+        <textarea name="" id="" rows="4" ng-model="message"></textarea>
+        <input type="button" value="Send" ng-click="sendMessage()">
     </div>
     <div class="list-panel" ng-class="{true:'list-panel-open'}[contactListIsOpen]">
         <a href="" class="contact" ng-repeat="contact in contactList" ng-click="selectContact(contact.id, contact.name, contact.image, contact.net-status)">
@@ -23,13 +23,13 @@
     </div>
     <div class="chat-header">
         <a href="#">
-            <div class="interlocutor-image my-image"><img ng-src="{{curentInterlocutor.image}}"></div>
+            <div class="interlocutor-image my-image"><img src=""></div>
         </a>
-        <div class="interlocutor-name my-name">{{curentInterlocutor.name}}</div>
+        <div class="interlocutor-name my-name">My name</div>
         <img class="conversation-sign" src="/front/directives/chat/conversationIcon.png">
         <a href="#" ng-click="openContactList()">
-            <div class="interlocutor-image"></div>
-            <div class="interlocutor-name">Mr. Smith</div>
+            <div class="interlocutor-image"><img ng-src="{{curentInterlocutor.image}}"></div>
+            <div class="interlocutor-name">{{curentInterlocutor.name}}</div>
         </a>
     </div>
 </div>

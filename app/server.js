@@ -2,6 +2,7 @@ var port = 8282;
 //var serverUrl = "127.0.0.1";
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var mongojs = require('mongojs');
 var url = require('url');
 var jsonFile = require('json-file-plus');
@@ -13,6 +14,8 @@ app.use(express.static(__dirname + '/front'));
 app.use(express.static(__dirname + '/'));
 app.use(express.static(__dirname + '/../node_modules'));
 app.use(express.static(__dirname + '/../bower_components'));
+app.use(bodyParser.json());
+
 
 app.get('/users', function (req, resp) {
 
@@ -29,13 +32,12 @@ app.get('/users', function (req, resp) {
     //resp.json(humans);
 });
 
-app.post('/chat-history', function (req, resp) {
+app.get('/chat-history/:interlocutorId', function (req, resp) {
 
     var parsedURL = url.parse(req.url, true);
 
-    var userId = parsedURL.query.userId;
-    var interlocutorId = parsedURL.query.interlocutorId;
-    var interlocutorId = req.body.interlocutorId;
+    var userId = req.params.userId;
+    var interlocutorId = req.params.interlocutorId;
 
     switch (interlocutorId) {
         case '1':
@@ -56,6 +58,14 @@ app.post('/chat-history', function (req, resp) {
     }
 
 
+});
+
+app.post('/chat-history', function (req, resp) {
+    console.log('Save history started');
+    console.log('req.body =' + req.body.from);
+    console.log('req.body =' + req.body.to);
+    console.log('req.body =' + req.body.newMessage);
+    resp.send();
 });
 
 app.listen(port);
