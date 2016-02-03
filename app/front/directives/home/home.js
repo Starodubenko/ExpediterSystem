@@ -5,7 +5,7 @@
                 restrict: 'E',
                 templateUrl: 'directives/home/home.html',
                 controller: function ($scope, $location) {
-                    $location.path('/orders');
+                    //$location.path('/work');
                 }
             }
         });

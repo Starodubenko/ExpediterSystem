@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="input-area">
-        <textarea name="" id="" rows="4" ng-model="message"></textarea>
+        <textarea name="" id="" rows="4" ng-model="message" ng-keypress="keyDown($event);"></textarea>
         <input type="button" value="Send" ng-click="sendMessage()">
     </div>
     <div class="list-panel" ng-class="{true:'list-panel-open'}[contactListIsOpen]">

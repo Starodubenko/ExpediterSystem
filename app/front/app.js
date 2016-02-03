@@ -7,6 +7,7 @@
         'app.directives.home',
         'app.directives.work',
         'app.directives.mainframe',
-        'app.directives.chat'
+        'app.directives.chat',
+        'app.directives.toolbar'
     ]);
 })();
