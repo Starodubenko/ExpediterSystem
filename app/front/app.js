@@ -8,6 +8,7 @@
         'app.directives.work',
         'app.directives.mainframe',
         'app.directives.chat',
-        'app.directives.toolbar'
+        'app.directives.toolbar',
+        'app.directives.login'
     ]);
 })();

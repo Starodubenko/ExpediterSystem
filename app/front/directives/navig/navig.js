@@ -5,16 +5,20 @@
                 restrict: 'E',
                 templateUrl: 'directives/navig/navig.html',
                 controller: function ($scope, $rootScope, $window, $location) {
+                    var smallScreenBorder = 980;
                     $scope.currentStateOnSmallScreen = "orders";
+                    $scope.isSmallScreen = false;
 
                     var navig = angular.element($window);
-                    var navigOldWindth = 0;
 
                     navig.bind('resize', function(e){
                         var newWidth = navig.width();
-                        if (navigOldWindth < newWidth && newWidth > 980){
-                            $location.path('/');
-                            //window.location = '#/';
+                        if ($scope.isSmallScreen && newWidth > smallScreenBorder){
+                            window.location = '#/';//$location.path('/');
+                            $scope.isSmallScreen = !$scope.isSmallScreen;
+                        } else if (!$scope.isSmallScreen && newWidth < smallScreenBorder){
+                            window.location = '#/' + $scope.currentStateOnSmallScreen;
+                            $scope.isSmallScreen = !$scope.isSmallScreen;
                         }
                     });
 

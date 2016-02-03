@@ -1,9 +1,23 @@
-.chat-area{
-    padding: 5%;
-    width: 100%;
-    height: 100%;
-    /*float: right;*/
-    position: relative;
+.login-area{
+    height: 100vh;
+    min-height: 1px;
+    text-align: center;
+}
+
+.login-form{
+
+}
+
+.login-form > .login, .login-form > .password{
+    margin: 10px;
+}
+
+.login-form > .ng-touched.ng-invalid-required{
+    border-color: red;
+}
+
+.login-form > .ng-valid{
+    border-color: #00d100;
 }
 
 @media (max-device-width: 992px) {

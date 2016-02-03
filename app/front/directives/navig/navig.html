@@ -2,14 +2,7 @@
 
         <div class="navig-label">
             <a href="" id="label-short-name" ng-click="showToolsPanel()">ES</a>
-            <span id="label-full-name">Expediter System</span>
-            <ul class="tools-container">
-                <li class="tool"><a href="#">Tool_1</a></li>
-                <li class="tool"><a href="#">Tool_2</a></li>
-                <li class="tool"><a href="#">Tool_3</a></li>
-                <li class="tool"><a href="#">Tool_4</a></li>
-                <li class="tool"><a href="#">Tool_5</a></li>
-            </ul> 
+            <a ui-sref="home" id="label-full-name">Expediter System</a>
         </div>
         <div class="navig-button-container">
             <div  class="navig-button" ng-class="{'orders': 'selected-tool'}[currentStateOnSmallScreen]">
