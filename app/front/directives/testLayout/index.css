@@ -1,0 +1,38 @@
+.test-nav-header{
+    background-color: #74e8ee;
+    height: 50px;
+    /*text-align: center;*/
+}
+
+.test-nav-header > button{
+    margin: 0;
+}
+
+.test-dynamic-content{
+    background-color: #48b488;
+}
+
+.test-toolbar{
+    background-color: #b47e67;
+    width: 200px;
+    max-height: 600px;
+    min-height: 600px;
+}
+
+.test-middle-frame{
+    background-color: #aab458;
+    max-height: 600px;
+    min-height: 600px;
+}
+
+.test-chat-frame{
+    background-color: #52b44e;
+    width: 300px;
+    max-height: 600px;
+    min-height: 600px;
+}
+
+.test-footer{
+    background-color: #6db7ee;
+    min-height: 200px;
+}

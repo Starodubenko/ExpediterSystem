@@ -12,6 +12,7 @@
         'app.directives.mainframe',
         'app.directives.chat',
         'app.directives.toolbar',
-        'app.directives.login'
+        'app.directives.login',
+        'app.directives.testLayout'
     ]);
 })();

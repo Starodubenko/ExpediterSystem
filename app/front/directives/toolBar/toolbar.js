@@ -20,15 +20,13 @@
 
         $scope.tools = [
             {name: "Login", state: "login"},
-            {name: "Tools_2", state: "login"},
+            {name: "Test Layout", state: "testLayout"},
             {name: "Tools_3", state: "login"}
         ];
 
         $scope.selectInToolbar = function(toolName){
             $('.toolbar').toggleClass("open-toolbar");
             NavigationService.selected.tool = toolName;
-            $scope.$apply();
-            console.log( NavigationService.selectedTool);
         };
 
         $document.on("click", function(event){
