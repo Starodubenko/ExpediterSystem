@@ -36,3 +36,15 @@
     background-color: #6db7ee;
     min-height: 200px;
 }
+
+@media (max-width: 959px) and (min-width: 600px) {
+    .test-open-toolbar{
+        left: 0!important;
+    }
+
+    [hide-sm]:not([show-gt-xs]):not([show-sm]):not([show]), [hide-gt-xs]:not([show-gt-xs]):not([show-sm]):not([show]) {
+        display: block;
+        left: -200px;
+        position: absolute;
+    }
+}
