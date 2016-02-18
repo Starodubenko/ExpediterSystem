@@ -1,9 +1,9 @@
 (function () {
     angular.module('app', [
         'appRouter',
-        'ngAria',
         'ngAnimate',
-        // 'ngMaterial',
+        'ngAria',
+        'ngMaterial',
         'ngResource',
         'app.directives.navig',
         'app.directives.footer',
