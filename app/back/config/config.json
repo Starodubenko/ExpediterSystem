@@ -1,0 +1,15 @@
+{
+  "port": 8282,
+  "mongoose": {
+    "uri": "mongodb://localhost/ES"
+  },
+  "session": {
+    "secret": "KillerIsJim",
+    "keys":["keyOne"],
+    "cookie": {
+      "path": "/",
+      "httpOnly": true,
+      "maxAge": null
+    }
+  }
+}

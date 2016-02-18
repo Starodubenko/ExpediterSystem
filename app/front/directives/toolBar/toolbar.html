@@ -1,0 +1,6 @@
+
+
+<div class="toolbar custom-scrollbar">
+    <li ng-repeat="tool in tools" class="tool" ng-class="{'selected-tool':tool.name == selected.tool}"><a
+            ui-sref="{{tool.state}}" ng-click="selectInToolbar(tool.name)" ng-bind="tool.name"></a></li>
+</div>

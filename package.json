@@ -12,7 +12,18 @@
   },
   "dependencies": {
     "angular-resource": "^1.4.9",
+    "async": "^1.5.2",
     "body-parser": "^1.14.2",
-    "json-file-plus": "^3.2.0"
+    "bson": "^0.4.21",
+    "bson-ext": "^0.1.13",
+    "connect-mongo": "^1.1.0",
+    "cookie-parser": "^1.4.1",
+    "cookie-session": "^2.0.0-alpha.1",
+    "express-sessions": "^1.0.5",
+    "json-file-plus": "^3.2.0",
+    "mongodb": "^2.1.4",
+    "mongoose": "^4.3.7",
+    "nconf": "^0.8.2",
+    "socket.io": "^1.4.5"
   }
 }

@@ -4,9 +4,10 @@
             return {
                 restrict: 'E',
                 templateUrl: 'directives/navig/navig.html',
-                controller: function ($scope, $rootScope, $window, $location) {
+                controller: function ($scope, $rootScope, $window, $location, NavigationService) {
                     var smallScreenBorder = 980;
-                    $scope.currentStateOnSmallScreen = "orders";
+                    $scope.currentStateOnSmallScreen = NavigationService.selected;
+
                     $scope.isSmallScreen = false;
 
                     var navig = angular.element($window);
@@ -28,15 +29,9 @@
 
                     $scope.switchCurrentState = function(newState){
                         if (newState != null){
-                            $scope.currentStateOnSmallScreen = newState;
-
-                            $rootScope.$broadcast('selected-main-tool');
+                            NavigationService.selected.tool = newState;
                         }
                     };
-
-                    $scope.$on('selected-additional-tool', function (event, data) {
-                        $scope.currentStateOnSmallScreen = '';
-                    });
                 },
                 link: function($scope, element, attrs) {
 

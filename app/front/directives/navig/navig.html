@@ -5,10 +5,10 @@
             <a ui-sref="home" id="label-full-name">Expediter System</a>
         </div>
         <div class="navig-button-container">
-            <div  class="navig-button" ng-class="{'orders': 'selected-tool'}[currentStateOnSmallScreen]">
+            <div  class="navig-button" ng-class="{'orders': 'selected-tool'}[currentStateOnSmallScreen.tool]">
                 <a href="#/orders" ng-click="switchCurrentState('orders')">Orders</a>
             </div>
-            <div  class="navig-button" ng-class="{'chat': 'selected-tool'}[currentStateOnSmallScreen]">
+            <div  class="navig-button" ng-class="{'chat': 'selected-tool'}[currentStateOnSmallScreen.tool]">
                 <a href="#/chat" ng-click="switchCurrentState('chat')">Chat</a>
             </div>
         </div>
