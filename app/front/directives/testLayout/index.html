@@ -1,18 +1,62 @@
-<div class="test-nav-header" layout="row" layout-align="center center">
-    <md-button md-no-ink class="md-primary" hide-xs>Expediter System</md-button>
-    <md-button md-no-ink class="md-primary" hide-gt-xs>ES</md-button>
-    <md-button md-no-ink class="md-primary" hide-gt-xs flex="45">Orders</md-button>
-    <md-button md-no-ink class="md-primary" hide-gt-xs flex="45">Chat</md-button>
+<div class="test-nav-header" layout="row" layout-align="end center" layout-padding="10">
+    <md-toolbar class="md-theme-indigo" layout="row" layout-align="start center" flex-sm="0" flex="33" hide-sm hide-xs style="padding: 0">
+        <img style="width: 70px; height: 70px; margin-right: 10px" class="user-avatar"/>
+        <div flex="auto">
+            <div class="user-first-name">Rodion</div>
+            <div class="user-last-name">Starodubenko</div>
+        </div>
+    </md-toolbar>
+    <md-button md-no-ink ng-click="toggleLeft()" style="color: #EEFFAD" hide-gt-md hide-xl flex-sm="100" flex-xs="100" flex="66">Expediter System</md-button>
+    <md-button md-no-ink ng-disabled="true" style="color: white!important" hide-md hide-sm hide-xs flex="66">Expediter System</md-button>
 </div>
 <div layout="row" class="test-dynamic-content">
-    <div class="test-toolbar" hide-sm hide-xs >
-        [width="200"]
-    </div>
-    <div class="test-middle-frame" flex>
-        [flex="70-100"]
-    </div>
-    <div class="test-chat-frame" hide-xs>
-        [width="300"]
-    </div>
+    <md-sidenav md-component-id="left" class="md-sidenav-left test-toolbar" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-theme-indigo" layout="row" hide-gt-md layout-align="start center">
+            <img style="width: 70px; height: 70px; margin-right: 10px" class="user-avatar" hide-gt-sm/>
+            <div flex="auto" hide-gt-sm>
+                <div class="user-first-name">Rodion</div>
+                <div class="user-last-name">Starodubenko</div>
+            </div>
+        </md-toolbar>
+        <md-content>
+            <md-menu-item>
+                <md-button ng-click="selectTool($event)">
+                    <md-icon>Log in</md-icon>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="selectTool($event)">
+                    <md-icon>Orders</md-icon>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item hide-gt-sm>
+                <md-button ng-click="selectTool($event)">
+                    <md-icon>Chat</md-icon>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="selectTool($event)">
+                    <md-icon>First menu</md-icon>
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="selectTool($event)">
+                    <md-icon>Second menu</md-icon>
+                </md-button>
+            </md-menu-item>
+        </md-content>
+    </md-sidenav>
+    <md-content flex="auto" class="test-middle-frame">
+
+
+    </md-content>
+    <md-sidenav md-component-id="right" md-is-locked-open="$mdMedia('gt-sm')" class="md-sidenav-right">
+        <form>
+            <md-input-container>
+                <label for="testInput">Test input</label>
+                <input id="testInput" type="text" ng-model="data" md-autofocus>
+            </md-input-container>
+        </form>
+    </md-sidenav>
 </div>
 <div class="test-footer"></div>

@@ -1,7 +1,7 @@
 .test-nav-header{
-    background-color: #74e8ee;
-    height: 50px;
-    /*text-align: center;*/
+    background-color: #3F51B5;
+    min-height: 70px;
+    padding: 0;
 }
 
 .test-nav-header > button{
@@ -10,39 +10,44 @@
 
 .test-dynamic-content{
     background-color: #48b488;
+    max-height: 80vh;
+    min-height: 80vh;
 }
 
-.test-toolbar{
-    background-color: #b47e67;
-    width: 200px;
-    max-height: 600px;
-    min-height: 600px;
+.test-toolbar, md-menu-item, md-content{
+    width: 220px;
+    overflow: hidden;
 }
 
 .test-middle-frame{
-    background-color: #aab458;
-    max-height: 600px;
-    min-height: 600px;
+    background-color: #DCDCDC;
 }
 
 .test-chat-frame{
     background-color: #52b44e;
-    width: 300px;
-    max-height: 600px;
-    min-height: 600px;
+    width: 400px;
 }
 
 .test-footer{
     background-color: #6db7ee;
-    min-height: 200px;
+    min-height: 15vh;
 }
 
-@media (max-width: 959px) and (min-width: 600px) {
+.test-selected-tool{
+    background-color: #B9B9B9;
+    opacity: 0.5;
+}
+
+.md-theme-indigo{
+    height: 70px;
+}
+
+@media (max-width: 959px){
     .test-open-toolbar{
         left: 0!important;
     }
 
-    [hide-sm]:not([show-gt-xs]):not([show-sm]):not([show]), [hide-gt-xs]:not([show-gt-xs]):not([show-sm]):not([show]) {
+    .test-toolbar[hide-xs]:not([show-xs]):not([show]), .test-toolbar.hide-xs:not(.show-xs):not(.show) {
         display: block;
         left: -200px;
         position: absolute;
