@@ -14,9 +14,14 @@
     min-height: 80vh;
 }
 
-.test-toolbar, md-menu-item, md-content{
+.test-toolbar, md-menu-item{
     width: 220px;
-    overflow: hidden;
+    /*overflow: hidden;*/
+}
+
+md-content{
+    width: 220px;
+    overflow-x: hidden;
 }
 
 .test-middle-frame{
@@ -42,14 +47,9 @@
     height: 70px;
 }
 
-@media (max-width: 959px){
-    .test-open-toolbar{
-        left: 0!important;
-    }
-
-    .test-toolbar[hide-xs]:not([show-xs]):not([show]), .test-toolbar.hide-xs:not(.show-xs):not(.show) {
-        display: block;
-        left: -200px;
-        position: absolute;
+@media (min-width: 960px){
+    .md-button > span {
+        display: inline;
+        float: right;
     }
 }
