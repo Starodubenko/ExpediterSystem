@@ -1,19 +1,23 @@
 <div class="uploader-panel">
     <div class="input-block" layout="row">
         <md-button class="" flex="100" ng-click="clickSelectFileButton()">
-            Select File
+            Select Files
             <md-icon class="upload-icon" md-svg-icon="front/directives/fileUploader/ic_file_upload_black_48px.svg"></md-icon>
         </md-button>
-        <input type="file" >
+        <input type="file" name="selectedFile" ng-model="file" onchange="angular.element(this).scope().selectFile(this)" multiple>
+        <!--ng-change="selectFile($event)"-->
     </div>
 
     <div class="files-list">
-        <div class="fileRow md-subhead" layout="row" ng-repeat="file in selectedFiles" >
-            <span class="fileName md-body-1" flex="auto" ng-bind="file.name"></span>
-            <span class="fileSize md-body-1" ng-bind="file.size"></span>
-            <md-button layout-align="center center" ng-click="removeFile($event)" value="{{file.name}}">
-                <md-icon class="delete-icon" md-svg-icon="front/directives/fileUploader/ic_clear_black_24px.svg"></md-icon>
-            </md-button>
+        <div ng-repeat="file in selectedFiles">
+            <div class="fileRow md-subhead" layout="row">
+                <span class="fileName md-body-1" flex="70" ng-bind="file.name"></span>
+                <span class="fileSize md-body-1" ng-bind="file.size"></span>
+                <md-button layout-align="center center" ng-click="removeFile($event)" value="{{file.name}}">
+                    <md-icon class="delete-icon" md-svg-icon="front/directives/fileUploader/ic_clear_black_24px.svg"></md-icon>
+                </md-button>
+            </div>
+            <md-divider ng-if="!$last"></md-divider>
         </div>
     </div>
 </div>
