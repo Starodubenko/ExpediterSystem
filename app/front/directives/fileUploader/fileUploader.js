@@ -1,15 +1,8 @@
 (function () {
     angular.module('app.directives.fileUploader', [])
-        .config(function($mdIconProvider) {
-            $mdIconProvider
-                .iconSet('upload', 'app/front/directives/fileUploader/ic_file_upload_black_24dp_2x.png', 24);
-        })
         .directive('fileUploader', function () {
             return {
                 restrict: 'E',
-                scope: {
-                    data: '='
-                },
                 templateUrl: 'directives/fileUploader/fileUploader.html',
                 controller: function ($scope) {
                     console.log($scope.data);
@@ -23,8 +16,8 @@
 
                     $scope.selectedFiles = [
                         {
-                            name: "picture_1",
-                            size: "2MB"
+                            name: "picture_111111111111111111111111111",
+                            size: "1024MB"
                         },
                         {
                             name: "picture_2",
