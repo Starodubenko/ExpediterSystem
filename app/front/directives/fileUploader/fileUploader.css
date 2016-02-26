@@ -1,0 +1,18 @@
+.uploader-panel{
+    width: 300px;
+    font-size: 20px;
+}
+
+.input-block > input[type="file"]{
+    display: none;
+}
+
+.file{
+
+}
+
+.input-block > .md-button > span {
+    display: inline;
+    float: none;
+    font-size: x-large;
+}

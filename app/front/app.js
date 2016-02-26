@@ -13,6 +13,7 @@
         'app.directives.chat',
         'app.directives.toolbar',
         'app.directives.login',
-        'app.directives.testLayout'
+        'app.directives.testLayout',
+        'app.directives.fileUploader'
     ]);
 })();

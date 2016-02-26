@@ -1,0 +1,15 @@
+<div class="uploader-panel">
+    <div class="input-block" layout="row">
+        <md-button class="" flex="100" ng-click="clickSelectFileButton()">Select File</md-button>
+        <md-icon md-svg-icon="upload" ng-style="{color: 'green', height:'20px', width: '20px'}"></md-icon>
+        <input type="file" >
+    </div>
+
+    <div class="files-list">
+        <div class="file md-body-1" ng-repeat="file in selectedFiles">
+            <label class="fileName" ng-bind="file.name"></label>
+            <label class="fileName" ng-bind="file.size"></label>
+            <md-button ng-click="removeFile($event)" value="{{file.name}}">X</md-button>
+        </div>
+    </div>
+</div>
