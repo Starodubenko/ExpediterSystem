@@ -6,8 +6,8 @@
             <div class="user-last-name">Starodubenko</div>
         </div>
     </md-toolbar>
-    <md-button md-no-ink ng-click="toggleLeft()" style="color: #EEFFAD" hide-gt-md hide-xl flex-sm="100" flex-xs="100" flex="40">Expediter System</md-button>
-    <md-button md-no-ink ng-disabled="true" style="color: white!important" hide-md hide-sm hide-xs flex="40">Expediter System</md-button>
+    <md-button class="label-name" md-no-ink ng-click="toggleLeft()" style="color: #EEFFAD" hide-gt-md hide-xl flex-sm="100" flex-xs="100" flex="40">Expediter System</md-button>
+    <md-button class="label-name" md-no-ink ng-disabled="true" style="color: white!important" hide-md hide-sm hide-xs flex="40">Expediter System</md-button>
 </div>
 <div layout="row" class="test-dynamic-content">
     <md-sidenav md-component-id="left" class="md-sidenav-left test-toolbar" md-is-locked-open="$mdMedia('gt-md')">
@@ -21,27 +21,27 @@
         <md-content>
             <md-menu-item>
                 <md-button ng-click="selectTool($event)">
-                    <md-icon>Log in</md-icon>
+                    <span class="nav-name">Log in</span>
                 </md-button>
             </md-menu-item>
             <md-menu-item>
                 <md-button ng-click="selectTool($event)">
-                    <md-icon>Orders</md-icon>
+                    <span class="nav-name">Orders</span>
                 </md-button>
             </md-menu-item>
             <md-menu-item hide-gt-sm>
                 <md-button ng-click="selectTool($event)">
-                    <md-icon>Chat</md-icon>
+                    <span class="nav-name">Chat</span>
                 </md-button>
             </md-menu-item>
             <md-menu-item>
                 <md-button ng-click="selectTool($event)">
-                    <md-icon>First menu</md-icon>
+                    <span class="nav-name">First menu</span>
                 </md-button>
             </md-menu-item>
             <md-menu-item>
                 <md-button ng-click="selectTool($event)">
-                    <md-icon>Second menu</md-icon>
+                    <span class="nav-name">Second menu</span>
                 </md-button>
             </md-menu-item>
         </md-content>

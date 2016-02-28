@@ -31,6 +31,7 @@
                             previous.toggleClass('test-selected-tool');
                         }
                         angular.element(e.target.children[1]).toggleClass('test-selected-tool');
+
                         previous = angular.element(e.target.children[1]);
                         $scope.toggleLeft();
                     };

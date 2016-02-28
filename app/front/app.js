@@ -5,6 +5,7 @@
         'ngAria',
         'ngMaterial',
         'ngResource',
+        'monospaced.mousewheel',
         'app.directives.navig',
         'app.directives.footer',
         'app.directives.home',

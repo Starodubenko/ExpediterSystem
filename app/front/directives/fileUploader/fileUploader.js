@@ -40,11 +40,6 @@
 
     /** @ngInject */
     function linkFileUploader($scope, element, attributes){
-        var wrapper = angular.element(element[0].firstChild)[0];
-        var inputBlock = angular.element(wrapper.children[0])[0];
-        var filesList = angular.element(wrapper.children[1])[0];
-        var selectFileButton = angular.element(inputBlock.children[0])[0];
-        var fileInput = angular.element(inputBlock.children[1])[0];
 
         $scope.selectedFiles = [
             {
@@ -61,12 +56,15 @@
             }
         ];
 
-        $scope.clickSelectFileButton = function () {
-            fileInput.click();
+        $scope.horizontalScroll = function (element) {
+            var deltaY = element.deltaY;
+            element.target.scrollLeft = element.target.scrollLeft + deltaY/3 * 5;
+            event.preventDefault();
         };
 
-        $scope.clickSelectFiles = function () {
-            fileInput.click();
+        $scope.clickSelectFileButton = function (el) {
+            var sibling = el.currentTarget.nextElementSibling;
+            sibling.click();
         };
 
         $scope.removeFile = function (el) {

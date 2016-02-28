@@ -1,8 +1,10 @@
 <div class="uploader-panel">
     <div class="input-block" layout="row">
-        <md-button class="" flex="100" ng-click="clickSelectFileButton()">
+        <md-button class="" flex="100" ng-click="clickSelectFileButton($event)">
             Select Files
-            <md-icon class="upload-icon" md-svg-icon="front/directives/fileUploader/ic_file_upload_black_48px.svg"></md-icon>
+            <md-icon class="upload-icon">
+                <i class="material-icons">file_upload</i>
+            </md-icon>
         </md-button>
         <input type="file" name="selectedFile" ng-model="file" onchange="angular.element(this).scope().selectFile(this)" multiple>
         <!--ng-change="selectFile($event)"-->
@@ -11,10 +13,12 @@
     <div class="files-list">
         <div ng-repeat="file in selectedFiles">
             <div class="fileRow md-subhead" layout="row">
-                <span class="fileName md-body-1" flex="70" ng-bind="file.name"></span>
+                <span class="fileName md-body-1" flex="70" ng-bind="file.name" msd-wheel="horizontalScroll($event, $delta, $deltaX, $deltaY)"></span>
                 <span class="fileSize md-body-1" ng-bind="file.size"></span>
                 <md-button layout-align="center center" ng-click="removeFile($event)" value="{{file.name}}">
-                    <md-icon class="delete-icon" md-svg-icon="front/directives/fileUploader/ic_clear_black_24px.svg"></md-icon>
+                    <md-icon class="delete-icon">
+                        <i class="material-icons">clear</i>
+                    </md-icon>
                 </md-button>
             </div>
             <md-divider ng-if="!$last"></md-divider>

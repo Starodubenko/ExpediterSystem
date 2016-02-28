@@ -47,8 +47,17 @@ md-content{
     height: 70px;
 }
 
+.label-name{
+    font-size: 36px;
+    height: 70px;
+}
+
+.nav-name{
+    color: #3F51B5;
+}
+
 @media (min-width: 960px){
-    .md-button > span {
+    .label-name > span {
         display: inline;
         float: right;
     }

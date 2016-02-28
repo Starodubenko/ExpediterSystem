@@ -15,7 +15,8 @@
 }
 
 .fileRow{
-    height: 30px;
+    height: 20px;
+    margin: 6px 0;
 
 }
 
@@ -26,6 +27,8 @@
     text-transform: none;
     min-width: inherit;
     width: 30px;
+    position: relative;
+    top: -8px;
 }
 
 .fileRow > .md-button > span{
@@ -51,13 +54,15 @@
 }
 
 .md-body-1{
-    padding: 10px;
+    padding: 1px;
     margin: 0 2px ;
 }
 
 .fileName{
+    border-right: #C2C2C2 solid 1px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap;
+    /*text-overflow: ellipsis;*/
 }
 
 .fileSize{
@@ -68,7 +73,6 @@
     color: #3F51B5;
     height: 30px;
     width: 30px;
-    margin-bottom: 10px;
 }
 
 .delete-icon{
