@@ -10,8 +10,10 @@
 
 .test-dynamic-content{
     background-color: #48b488;
-    max-height: 80vh;
-    min-height: 80vh;
+    /*max-height: 80vh;*/
+    /*min-height: 80vh;*/
+    max-height: 89vh;
+    min-height: 89vh;
 }
 
 .test-toolbar, md-menu-item{
@@ -54,6 +56,10 @@ md-content{
 
 .nav-name{
     color: #3F51B5;
+}
+
+md-toolbar:not(.md-menu-toolbar).toolbar-header{
+    background-color: #30396E;
 }
 
 @media (min-width: 960px){
