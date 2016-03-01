@@ -6,6 +6,7 @@
         'ngMaterial',
         'ngResource',
         'monospaced.mousewheel',
+        'ngFileUpload',
         'app.directives.navig',
         'app.directives.footer',
         'app.directives.home',

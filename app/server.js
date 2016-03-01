@@ -8,6 +8,7 @@ var io = require('socket.io').listen(server);
 var bodyParser = require('body-parser');
 var url = require('url');
 var jsonFile = require('json-file-plus');
+var multer  = require('multer');
 
 var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
@@ -32,7 +33,7 @@ app.use(express.static(__dirname + '/../bower_components'));
 app.use(bodyParser.json());
 
 
-app.use(cookieParser());
+// app.use(cookieParser());
 //app.use(cookieSession({
 //    secret: config.get('session:secret'),
 //    keys: config.get('session:keys')
@@ -57,39 +58,39 @@ app.use(cookieParser());
 //    })
 //}));
 
-app.use(function(req, res, next){
-    req.session.numberOfVisits = req.session.numberOfVisits + 1 || 1;
-    res.send("Visits" + req.session.numberOfVisits);
-});
+// app.use(function(req, res, next){
+//     req.session.numberOfVisits = req.session.numberOfVisits + 1 || 1;
+//     res.send("Visits" + req.session.numberOfVisits);
+// });
 
 //app.use(require('./back/middleware/sendHttpError'));
-app.use(function (err, req, res, next) {
-
-    res.sendHttpError = function (error) {
-        res.status(error.status);
-        if (res.req.headers['x-requested-width'] == 'XMLHttpRequest') {
-            res.json(error);
-        } else {
-            //res.render("error", {error: error})
-            res.send(error);
-        }
-    };
-
-    if (typeof err == 'number') {
-        err = new HttpError(err);
-    }
-
-    if (err instanceof HttpError){
-        res.sendHttpError(err);
-    } else {
-        if (app.get('env') == 'development'){
-            //express.errorHandler()(err, req, res, next);
-        } else {
-            err = new HttpError(500);
-            res.sendHttpError(err);
-        }
-    }
-});
+// app.use(function (err, req, res, next) {
+//
+//     res.sendHttpError = function (error) {
+//         res.status(error.status);
+//         if (res.req.headers['x-requested-width'] == 'XMLHttpRequest') {
+//             res.json(error);
+//         } else {
+//             //res.render("error", {error: error})
+//             res.send(error);
+//         }
+//     };
+//
+//     if (typeof err == 'number') {
+//         err = new HttpError(err);
+//     }
+//
+//     if (err instanceof HttpError){
+//         res.sendHttpError(err);
+//     } else {
+//         if (app.get('env') == 'development'){
+//             //express.errorHandler()(err, req, res, next);
+//         } else {
+//             err = new HttpError(500);
+//             res.sendHttpError(err);
+//         }
+//     }
+// });
 
 
 io.sockets
@@ -134,7 +135,18 @@ app.get('/chat-history/:interlocutorId', function (req, resp) {
 
 });
 
+
 app.post('/chat-history', function (req, resp) {
+    console.log('Save history started');
+    console.log('req.body =' + req.body.from);
+    console.log('req.body =' + req.body.to);
+    console.log('req.body =' + req.body.newMessage);
+    resp.send();
+});
+
+var upload = multer();
+//, upload.single()
+app.post('/upload-file', function (req, resp) {
     console.log('Save history started');
     console.log('req.body =' + req.body.from);
     console.log('req.body =' + req.body.to);

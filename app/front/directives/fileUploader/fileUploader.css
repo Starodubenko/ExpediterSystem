@@ -1,5 +1,5 @@
 .uploader-panel{
-    width: 300px;
+    width: 600px;
     font-size: 20px;
 }
 
@@ -8,48 +8,36 @@
 }
 
 .input-block > .md-button{
+    margin: 0;
     font-size: 15px;
     text-transform: none;
-    padding: 0;
-    margin: 0;
 }
 
 .fileRow{
     height: 20px;
     margin: 6px 0;
-
 }
 
 .fileRow > .md-button{
     margin: 0;
     padding: 0;
-    font-size: 15px;
-    text-transform: none;
-    min-width: inherit;
-    width: 30px;
     position: relative;
     top: -8px;
+    min-width: inherit;
+    width: 30px;
+    font-size: 15px;
 }
 
 .fileRow > .md-button > span{
-    margin: 0;
-    padding: 0;
     font-size: 15px;
-    text-transform: none;
     height: 30px;
-    display: inline;
-    float: none;
 }
 
 .fileRow > .md-button > div{
-    margin: 0;
-    padding: 0;
     height: 30px;
 }
 
 .input-block > .md-button > span {
-    display: inline;
-    float: none;
     font-size: x-large;
 }
 
@@ -59,14 +47,27 @@
 }
 
 .fileName{
-    border-right: #C2C2C2 solid 1px;
     overflow: hidden;
     white-space: nowrap;
-    /*text-overflow: ellipsis;*/
 }
 
-.fileSize{
-    width: 70px;
+.SelectedfileName{
+    overflow: hidden;
+    white-space: nowrap;
+    padding-top: 10px;
+    margin-left: 10px;
+    font-size: initial;
+}
+
+.fileComment{
+    width: 350px;
+    border-right: #C2C2C2 solid 1px;
+    border-left: #C2C2C2 solid 1px;
+    padding-left: 5px;
+}
+
+.fileDate{
+    width: 90px;
 }
 
 .upload-icon{
@@ -81,4 +82,16 @@
 
 md-divider{
     margin-top: 6px;
+}
+
+.md-button.icon-left > span, .md-button.icon-left > span{
+    float: right;
+}
+
+.upload-rogress{
+    margin-right: 33px;
+}
+
+.hidden-element{
+    display: none;
 }
