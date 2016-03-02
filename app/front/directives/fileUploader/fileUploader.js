@@ -1,11 +1,11 @@
 (function () {
     angular.module('app.directives.fileUploader', [])
         .filter('fileAlreadyInArray', function () {
-            return function (object, uploadedObject) {
+            return function (object, uploadedObjects) {
                 var isThere = false;
-                angular.forEach(uploadedObject, function (value) {
+                angular.forEach(uploadedObjects, function (value) {
                     if (!isThere) {
-                        isThere = value.file.name == object.file.name;
+                        isThere = value.name == object.file.name;
                     }
                 });
                 return isThere;
@@ -31,37 +31,42 @@
         var uploadProcess = null;
 
         $scope.uploadFile = function (button) {
-            uploadButton =  angular.element(button.currentTarget);
-            uploadProcess =  angular.element(button.currentTarget.previousElementSibling);
+            uploadButton = angular.element(button.currentTarget);
+            uploadProcess = angular.element(button.currentTarget.previousElementSibling);
             var itemAlreadyInArray = $filter('fileAlreadyInArray')($scope.uploadObject, $scope.uploadedObjects);
-            if (!itemAlreadyInArray) {
+            
+            if (!itemAlreadyInArray && $scope.uploadObject.file) {
                 uploadButton.addClass('hidden-element');
                 uploadProcess.removeClass('hidden-element');
-                $scope.upload($scope.uploadObject);
-                // $scope.uploadObject.date = new Date();
-                // $scope.uploadedObjects.push($scope.uploadObject);
+                $scope.fileIsUploading = true;
+                $scope.upload($scope.uploadObject.file);
             }
         };
 
         $scope.upload = function (file) {
             Upload.upload({
                 url: '/upload-file',
-                data: {fileForm: $scope.fileForm}
+                data: {file: file, comment: $scope.uploadObject.comment}
             }).then(function (resp) {
-                // console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-                // $scope.uploadedObjects.push(resp);
-                if (resp.status == 200 && $scope.progressPercentage == 100) {
-                    $timeout(function(){
+                if (resp.status == 200) {
+                    $timeout(function () {
                         uploadProcess.addClass('hidden-element');
                         uploadButton.removeClass('hidden-element');
-                        $scope.uploadedObjects.push($scope.uploadObject);
+
+                        $scope.uploadedObjects.push({
+                            name: $scope.uploadObject.file.name,
+                            comment: $scope.uploadObject.comment,
+                            date: resp.data.currentDate
+                        });
+                        $scope.uploadObject = {};
+                        $scope.progressPercentage = 0;
+                        $scope.fileIsUploading = false;
                     }, 200);
                 }
             }, function (resp) {
                 console.log('Error status: ' + resp.status);
             }, function (evt) {
                 $scope.progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                // console.log('progress: ' + $scope.progressPercentage + '% ' + evt.config.data.file.name);
             });
         };
     }
@@ -69,40 +74,9 @@
     /** @ngInject */
     function linkFileUploader($scope, element, attributes) {
 
-        $scope.uploadObject = [];
-
-        $scope.selectFile = function (el) {
-            $scope.uploadObject.file = el.files[0];
-            $scope.$apply();
-        };
-
-
-        $scope.uploadedObjects = [
-            {
-                comment: "First file",
-                date: "01.03.2016",
-                file: {
-                    name: "picture_111111111111111111111111111",
-                    size: "1024MB"
-                }
-            },
-            {
-                description: "Second file",
-                date: "01.03.2016",
-                file: {
-                    name: "picture_2",
-                    size: "1.5MB"
-                }
-            },
-            {
-                description: "Third file",
-                date: "01.03.2016",
-                file: {
-                    name: "picture_3",
-                    size: "1MB"
-                }
-            }
-        ];
+        $scope.uploadObject = {};
+        $scope.uploadedObjects = [];
+        $scope.fileIsUploading = false;
 
         $scope.horizontalScroll = function (element) {
             var deltaY = element.deltaY;
@@ -120,7 +94,7 @@
             var value = removeElement.attributes['value'].value;
 
             $scope.uploadedObjects = $scope.uploadedObjects.filter(function (el) {
-                return el.file.name !== value;
+                return el.name !== value;
             });
         };
     }

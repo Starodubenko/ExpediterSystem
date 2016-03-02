@@ -145,12 +145,11 @@ app.post('/chat-history', function (req, resp) {
 });
 
 var upload = multer();
-//, upload.single()
-app.post('/upload-file', function (req, resp) {
-    console.log('Save history started');
-    console.log('req.body =' + req.body.from);
-    console.log('req.body =' + req.body.to);
-    console.log('req.body =' + req.body.newMessage);
-    resp.send();
+app.post('/upload-file', upload.fields([
+    { name: 'file', maxCount: 1},
+    { name: 'comment', maxCount: 1}
+]), function (req, resp) {
+    var currentDate = new Date();
+    resp.json({currentDate:currentDate});
 });
 
