@@ -8,7 +8,8 @@
                 Select File
             </md-button>
             <input type="file" name="selectedFile" ng-model="uploadObject.file" ngf-select>
-            <span class="SelectedfileName md-body-1" flex="100" ng-bind="uploadObject.file.name"></span>
+            <span class="SelectedfileName md-body-1" flex="100" ng-bind="uploadObject.file.name"
+                  msd-wheel="horizontalScroll($event, $delta, $deltaX, $deltaY)"></span>
         </div>
         <md-input-container class="md-block">
             <label>Description</label>
@@ -16,9 +17,9 @@
         </md-input-container>
         <div layout="row" layout-align="end center">
             <div class="uploader-messages" layout="row" layout-align="center center" flex="auto">
-                <!--<span class="error-message">This file already in list</span>-->
-                <!--<span class="error-message">Select the file</span>-->
-                <span class="error-message">File uploaded successfully</span>
+                <span class="error-message" ng-show="statusCode == 0">This file already in list!</span>
+                <span class="error-message" ng-show="statusCode == 1">Select the file!</span>
+                <span class="success-message" ng-show="statusCode == 2">File uploaded successfully!</span>
             </div>
             <md-progress-circular md-mode="determinate" class="upload-rogress hidden-element" value="{{progressPercentage}}"></md-progress-circular>
             <md-button ng-click="uploadFile($event)" ng-disabled="!fileForm.$valid">

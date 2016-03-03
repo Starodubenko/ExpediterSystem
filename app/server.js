@@ -22,8 +22,20 @@ var mongoose = require('./back/libs/mongoose');
 
 var HttpError = require('./back/error').HttpError;
 
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+
+    if ('OPTIONS' == req.method) {
+        res.send(200);
+    }
+    else {
+        next();
+    }
+};
+
 require('./back/routes')(app);
 
+app.use(allowCrossDomain);
 app.use(express.static(__dirname + '/front'));
 app.use(express.static(__dirname + '/back'));
 app.use(express.static(__dirname + '/'));
@@ -93,6 +105,8 @@ app.use(bodyParser.json());
 // });
 
 
+
+
 io.sockets
     .on('connection', function (socket) {
         console.log('Somebody connected !!!');
@@ -134,7 +148,6 @@ app.get('/chat-history/:interlocutorId', function (req, resp) {
 
 
 });
-
 
 app.post('/chat-history', function (req, resp) {
     console.log('Save history started');

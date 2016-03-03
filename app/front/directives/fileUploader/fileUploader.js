@@ -1,5 +1,5 @@
 (function () {
-    angular.module('app.directives.fileUploader', [])
+    angular.module('app.directives.fileUploader', ['ngAnimate', 'ngMaterial', 'monospaced.mousewheel', 'ngFileUpload'])
         .filter('fileAlreadyInArray', function () {
             return function (object, uploadedObjects) {
                 var isThere = false;
@@ -26,7 +26,7 @@
     /** @ngInject */
     function fileUploaderController($scope, $element, $attrs, $filter, $timeout, Upload) {
         var vm = this;
-        $scope.progressPercentage = 0;
+
         var uploadButton = null;
         var uploadProcess = null;
 
@@ -34,12 +34,16 @@
             uploadButton = angular.element(button.currentTarget);
             uploadProcess = angular.element(button.currentTarget.previousElementSibling);
             var itemAlreadyInArray = $filter('fileAlreadyInArray')($scope.uploadObject, $scope.uploadedObjects);
-            
-            if (!itemAlreadyInArray && $scope.uploadObject.file) {
+
+            if (!$scope.uploadObject.file) {
+                $scope.statusCode = 1;
+            } else if (!itemAlreadyInArray) {
                 uploadButton.addClass('hidden-element');
                 uploadProcess.removeClass('hidden-element');
                 $scope.fileIsUploading = true;
                 $scope.upload($scope.uploadObject.file);
+            } else {
+                $scope.statusCode = 0;
             }
         };
 
@@ -61,6 +65,7 @@
                         $scope.uploadObject = {};
                         $scope.progressPercentage = 0;
                         $scope.fileIsUploading = false;
+                        $scope.statusCode = 2;
                     }, 200);
                 }
             }, function (resp) {
@@ -74,9 +79,17 @@
     /** @ngInject */
     function linkFileUploader($scope, element, attributes) {
 
+        $scope.progressPercentage = 0;
+        $scope.statusCode = -1;
         $scope.uploadObject = {};
         $scope.uploadedObjects = [];
         $scope.fileIsUploading = false;
+
+        $scope.$watch('uploadObject.file', function (newValue) {
+            if (newValue) {
+                $scope.statusCode = -1;
+            }
+        });
 
         $scope.horizontalScroll = function (element) {
             var deltaY = element.deltaY;
